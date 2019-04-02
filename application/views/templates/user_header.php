@@ -9,9 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>
-        <?= $title; ?>
-    </title>
+    <title><?= $title; ?></title>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>vendor/sbadmin2/vendor/fontawesome-free/css/all.css">
@@ -22,4 +20,7 @@
 
 </head>
 
-<body class="bg-gradient-primary"> 
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper"> 
