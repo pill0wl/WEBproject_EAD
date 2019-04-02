@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Apr 2019 pada 18.51
+-- Waktu pembuatan: 02 Apr 2019 pada 20.39
 -- Versi server: 10.1.35-MariaDB
 -- Versi PHP: 7.2.9
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `project_EAD`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `project`
+--
+
+CREATE TABLE `project` (
+  `id` int(11) NOT NULL,
+  `judul` varchar(128) NOT NULL,
+  `author` varchar(128) NOT NULL,
+  `deskripsi` longtext NOT NULL,
+  `img` varchar(128) NOT NULL,
+  `date_created` date NOT NULL,
+  `is_acc` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `project`
+--
+
+INSERT INTO `project` (`id`, `judul`, `author`, `deskripsi`, `img`, `date_created`, `is_acc`) VALUES
+(1, 'Project pertama', 'abcd', 'Ini tes\r\npost project\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n', 'project80jt.jpg', '2019-04-03', 1);
 
 -- --------------------------------------------------------
 
@@ -71,6 +94,12 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 --
+-- Indeks untuk tabel `project`
+--
+ALTER TABLE `project`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -85,6 +114,12 @@ ALTER TABLE `user_role`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `project`
+--
+ALTER TABLE `project`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
