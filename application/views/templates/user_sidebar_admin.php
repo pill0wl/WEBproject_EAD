@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Home -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?= base_url('admin'); ?>">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
             </li>
@@ -34,13 +34,13 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Requested Project</a>
-                        <a class="collapse-item" href="register.html">Manage Project</a>
+                        <a class="collapse-item" href="<?= base_url('admin/reqproject'); ?>">Requested Project</a>
+                        <a class="collapse-item" href="<?= base_url('admin/manageproject'); ?>">Manage Project</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?= base_url('admin/manageaccount'); ?>">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Account</span></a>
             </li>
@@ -49,7 +49,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?= base_url('admin/myaccount'); ?>">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>Edit Profile</span></a>
             </li>

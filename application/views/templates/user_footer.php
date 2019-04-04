@@ -47,6 +47,29 @@
 
             <!-- Custom scripts for all pages-->
             <script src="<?= base_url(); ?>assets/vendor/sbadmin2/js/sb-admin-2.min.js"></script>
+            <!-- Page level plugins -->
+            <script src="<?= base_url(); ?>assets/vendor/sbadmin2/vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="<?= base_url(); ?>assets/vendor/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+            <script>
+                // Call the dataTables jQuery plugin
+                $(document).ready(function() {
+                    $('#dataTable').DataTable();
+                });
+
+                $('.changeacc').on('click', function() {
+                    const id = $(this).data('id');
+                    $.ajax({
+                        url: "<?= base_url('admin/changeacc'); ?>",
+                        type: 'post',
+                        data: {
+                            id: id
+                        },
+                        success: function() {
+                            document.location.href = "<?= base_url('admin/reqproject'); ?>";
+                        }
+                    });
+                });
+            </script>
             </body>
 
             </html> 

@@ -3,13 +3,9 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">ini admin</h1>
-
-
-
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
             <h6 class="m-0 font-weight-bold text-primary">List Project</h6>
         </div>
         <div class="card-body">
@@ -22,6 +18,7 @@
                             <th>Description</th>
                             <th>Author</th>
                             <th>Created Date</th>
+                            <th>Accepted?</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -31,6 +28,7 @@
                             <th>Description</th>
                             <th>Author</th>
                             <th>Created Date</th>
+                            <th>Accepted?</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -42,10 +40,9 @@
                             $no++;
                             $judul = $i['judul'];
                             $desc = $i['deskripsi'];
-
                             $author = $i['author'];
                             $date = $i['date_created'];
-
+                            $id = $i['id'];
                             ?>
 
                         <tr>
@@ -59,6 +56,7 @@
                                     echo $judul;
                                 }
 
+
                                 ?> </td>
 
                             <td><?php
@@ -70,6 +68,15 @@
 
                             <td><?php echo $author; ?> </td>
                             <td><?php echo $date; ?> </td>
+                            <td>
+                                <div class="form-check text-center">
+                                    <input class="form-check-input changeacc" type="checkbox" <?php $this->db->where('id', '$id');
+                                                                                                $result = $this->db->get('project');
+                                                                                                if ($result->num_rows > 0) {
+                                                                                                    echo "checked='checked'";
+                                                                                                } ?> data-id="<?= $id; ?>">
+                                </div>
+                            </td>
 
                         </tr>
 
@@ -84,4 +91,4 @@
 <!-- /.container-fluid -->
 
 </div>
-<!-- End of Main Content --> 
+<!-- End of Main Content -- >                       
