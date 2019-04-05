@@ -59,11 +59,18 @@ class Admin extends CI_Controller
     public function updateprofile()
     {
         $this->form_validation->set_rules('name', 'Name', 'required|trim|min_length[2]');
+<<<<<<< HEAD
         $tmp = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->form_validation->set_rules('img', '', 'callback_file_check');
         if ($this->form_validation->run() == true) {
             $upload_img = $_FILES['img']['name'];
             if ($upload_img) {
+=======
+        if ($this->form_validation->run() == true) {
+            $tmp = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            // $upload_img = $_FILES['image'];
+            if (isset($_FILES['image'])) {
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
                 $config['allowed_types'] = 'gif|jpg|jpeg|png';
                 $config['max_size'] = '2048';
                 $config['upload_path'] = './assets/img/profile';
@@ -74,7 +81,11 @@ class Admin extends CI_Controller
                     $this->db->set('image', $new_image);
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Upload image failed!</div>');
+<<<<<<< HEAD
                     redirect('admin/manageproject');
+=======
+                    redirect('admin/myaccount');
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
                 }
             }
             if ($this->input->post('password2')) {

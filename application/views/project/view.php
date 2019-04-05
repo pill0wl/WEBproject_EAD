@@ -4,7 +4,11 @@
 
         <?= $this->session->flashdata('message'); ?>
         <div class="card-header">
+<<<<<<< HEAD
             <h6 class="m-0 font-weight-bold text-primary text-center"><?= $project['judul']; ?></h6>
+=======
+            <h6 class="m-0 font-weight-bold text-primary text-center">Add</h6>
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
         </div>
         <div class="card-body">
             <h4 class="">Project description :</h4>
@@ -19,6 +23,7 @@
             </div>
             <div class="text-center">
                 <?php
+<<<<<<< HEAD
                                                                         if (!$joined) {
                                                                             echo '<a href="#" data-toggle="modal" data-target="#joinmodal" class="btn btn-primary">JOIN</a>';
                                                                         } else {
@@ -26,6 +31,15 @@
                                                                         }
 
                                                                         ?>
+=======
+                                    if (!$joined) {
+                                        echo '<a href="#" data-toggle="modal" data-target="#joinmodal" class="btn btn-primary">JOIN</a>';
+                                    } else {
+                                        echo '<a href="#" data-toggle="modal" data-target="#unjoinmodal" class="btn btn-danger">Leave</a>';
+                                    }
+
+                                    ?>
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
 
             </div>
             <footer class="blockquote-footer">Author : <?= $project['author']; ?></footer>

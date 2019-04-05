@@ -46,12 +46,21 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href='<?php
+<<<<<<< HEAD
                                                                                             if ($user['role_id'] == 1) {
                                                                                                 echo "admin/myaccount";
                                                                                             } else {
                                                                                                 echo "user/myaccount";
                                                                                             }
                                                                                             ?>'>
+=======
+                                                                if ($user['role_id'] == 1) {
+                                                                    echo "admin/myaccount";
+                                                                } else {
+                                                                    echo "user/myaccount";
+                                                                }
+                                                                ?>'>
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>

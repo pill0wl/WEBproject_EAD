@@ -6,6 +6,7 @@ class M_Project extends CI_Model
     {
         return $this->db->query("SELECT * FROM PROJECT");
     }
+<<<<<<< HEAD
     function showmyproject($id)
     {
         return $this->db->query("SELECT * FROM PROJECT WHERE author='" . $id . "'");
@@ -18,6 +19,8 @@ class M_Project extends CI_Model
     {
         return $this->db->query("SELECT * FROM PROJECT WHERE is_acc = 1 ");
     }
+=======
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
     function showjoinedproject($id)
     {
         return $this->db->query("SELECT * FROM user_project INNER JOIN project ON user_project.project_id = project.id WHERE user_id ='" . $id . "'");

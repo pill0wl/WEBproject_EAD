@@ -23,6 +23,7 @@ class User extends CI_Controller
         $this->load->view('user/index', $data);
         $this->load->view('templates/user_footer', $data);
     }
+<<<<<<< HEAD
     public function explore()
     {
         $data['title'] = "Explore";
@@ -34,6 +35,8 @@ class User extends CI_Controller
         $this->load->view('user/explore', $data);
         $this->load->view('templates/user_footer');
     }
+=======
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
     public function addproject()
     {
         $this->form_validation->set_rules('title', 'title', 'trim|required|min_length[5]|max_length[128]');
@@ -45,6 +48,7 @@ class User extends CI_Controller
                 $config['allowed_types'] = 'gif|jpg|jpeg|png';
                 $config['max_size'] = '2048';
                 $config['upload_path'] = './assets/img/project';
+<<<<<<< HEAD
 
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload('img')) {
@@ -71,6 +75,37 @@ class User extends CI_Controller
             $data['title'] = "Add Project";
             $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
+=======
+
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('img')) {
+                    $new_image = $this->upload->data('file_name');
+                    //$this->db->set('img',$new_image);
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Upload image failed!</div>');
+                    redirect('user/addproject');
+                }
+            }
+            if (!$this->input->post('is_acc')) {
+                $is_acc = 0;
+            } else {
+                $is_acc = 1;
+            }
+            $author['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data = [
+                'judul' => $this->input->post('title', true),
+                'deskripsi' => $this->input->post('desc', true),
+                'img' => $new_image,
+                'is_acc' => $is_acc,
+                'author' => $author['user']['name'],
+                'date_created' => date('Y-m-d')
+            ];
+            $this->db->insert('project', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Success!</div>');
+            redirect('user/addproject');
+        } else {
+            $data['title'] = "Add Project";
+>>>>>>> d647304d7f5e1e0e7caea869f3de2195c8e727bc
             $this->load->view('templates/user_header', $data);
             $this->load->view('templates/user_sidebar_user', $data);
             $this->load->view('templates/user_topbar', $data);
