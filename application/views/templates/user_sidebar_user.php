@@ -2,7 +2,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('user') ?>">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -19,14 +19,14 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?= base_url('user'); ?>">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?= base_url('user/explore'); ?>">
                     <i class="fas fa-fw fa-search"></i>
                     <span>Explore</span></a>
             </li>
@@ -37,8 +37,8 @@
                 </a>
                 <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Add Project</a>
-                        <a class="collapse-item" href="register.html">My Project</a>
+                        <a class="collapse-item" href="<?= base_url('user/addproject'); ?>">Add Project</a>
+                        <a class="collapse-item" href="<?= base_url('user/manageproject'); ?>">My Project</a>
                     </div>
                 </div>
             </li>
@@ -46,7 +46,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?= base_url('user/myaccount'); ?>">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>Edit Profile</span></a>
             </li>
@@ -68,4 +68,4 @@
             </div>
 
         </ul>
-        <!-- End of Sidebar --> 
+        <!-- End of Sidebar -->

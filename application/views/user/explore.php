@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Welcome</h1>
+    <h1 class="h3 mb-4 text-gray-800">ini admin</h1>
 
 
 
@@ -10,7 +10,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
-            <h6 class="m-0 font-weight-bold text-primary">Joined Project</h6>
+            <h6 class="m-0 font-weight-bold text-primary">List Project</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -22,7 +22,7 @@
                             <th>Description</th>
                             <th>Author</th>
                             <th>Created Date</th>
-                            <th>Action</th>
+                            <th>View</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -32,23 +32,29 @@
                             <th>Description</th>
                             <th>Author</th>
                             <th>Created Date</th>
-                            <th>Action</th>
+                            <th>View</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         <?php
                         $no = 0;
                         foreach ($project->result_array() as $i) :
+
                             $no = $no;
                             $no++;
-                            $id = $i['project_id'];
+                            $id = $i['id'];
                             $judul = $i['judul'];
                             $desc = $i['deskripsi'];
+
                             $author = $i['author'];
                             $date = $i['date_created'];
+
                             ?>
+
                             <tr>
+
                                 <td><?php echo $no; ?> </td>
+
                                 <td><?php
                                 if (strlen($judul) >= 20) {
                                     echo substr($judul, 0, 20) . "...";
@@ -67,10 +73,11 @@
 
                                 <td><?php echo $author; ?> </td>
                                 <td><?php echo $date; ?> </td>
-                                <td><a class="badge badge-primary" href="<?= base_url('project?id=') . "$id"; ?>"> View </a>
-                                                                        </td>
-                                                                    </tr>
-                                                                                                            <?php endforeach; ?>
+                                <td><a class="badge badge-primary" href="<?= base_url('project?id=') . "$id"; ?>"> View </a></td>
+
+                                                                        </tr>
+
+                                                                                                                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

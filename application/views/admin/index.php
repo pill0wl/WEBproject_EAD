@@ -22,6 +22,7 @@
                             <th>Description</th>
                             <th>Author</th>
                             <th>Created Date</th>
+                            <th>View</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -31,6 +32,7 @@
                             <th>Description</th>
                             <th>Author</th>
                             <th>Created Date</th>
+                            <th>View</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -43,16 +45,17 @@
                             $judul = $i['judul'];
                             $desc = $i['deskripsi'];
 
+                            $id = $i['id'];
                             $author = $i['author'];
                             $date = $i['date_created'];
 
                             ?>
 
-                        <tr>
+                            <tr>
 
-                            <td><?php echo $no; ?> </td>
+                                <td><?php echo $no; ?> </td>
 
-                            <td><?php
+                                <td><?php
                                 if (strlen($judul) >= 20) {
                                     echo substr($judul, 0, 20) . "...";
                                 } else {
@@ -61,19 +64,20 @@
 
                                 ?> </td>
 
-                            <td><?php
+                                <td><?php
                                 if (strlen($desc) >= 20) {
                                     echo substr($desc, 0, 20) . " ...";
                                 } else {
                                     echo $desc;
                                 } ?> </td>
 
-                            <td><?php echo $author; ?> </td>
-                            <td><?php echo $date; ?> </td>
+                                <td><?php echo $author; ?> </td>
+                                <td><?php echo $date; ?> </td>
+                                <td><a class="badge badge-primary" href="<?= base_url('project?id=') . "$id"; ?>"> View </a></td>
 
-                        </tr>
+                                                                        </tr>
 
-                        <?php endforeach; ?>
+                                                                                                                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -84,4 +88,4 @@
 <!-- /.container-fluid -->
 
 </div>
-<!-- End of Main Content --> 
+<!-- End of Main Content -->
