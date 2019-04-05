@@ -7,6 +7,8 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">List Account</h6>
+            <br>
+            <?= $this->session->flashdata('message'); ?>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -102,7 +104,12 @@ foreach ($account->result_array() as $i) :
             <form action="<?= base_url('') . "admin/updateaccount/" . $id; ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
+                        <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Full name" value="<?= $name ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= $email ?>">
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="role" <?php
